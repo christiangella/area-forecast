@@ -1,2 +1,42 @@
 /* STYLESHEET DOCUMENT */
 
+@font-face {
+    font-family: 'Lemon Milk';
+    src: url(../fonts/LEMONMILK-Regular.otf)
+}
+
+header {
+    margin-bottom: 75px;
+}
+
+body {
+    background-image: url(../images/heikala_bg2.png);
+    background-size: cover;
+    background-position: bottom top;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: 'Lemon Milk';
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Lemon Milk';
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+main {
+    padding-bottom: 400px;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+button {
+    margin-bottom: 10px;
+}
