@@ -1,5 +1,10 @@
 /* STYLESHEET DOCUMENT */
 
+::selection {
+    color: #0f0f0f;
+    background-color: gold;
+}
+
 @font-face {
     font-family: 'Lemon Milk';
     src: url(../fonts/LEMONMILK-Regular.otf)
@@ -10,6 +15,7 @@ header {
 }
 
 body {
+    background-color: black;
     background-image: url(../images/heikala_bg2.png);
     background-size: cover;
     background-position: bottom top;
@@ -22,15 +28,26 @@ h1 {
     letter-spacing: 2px;
 }
 
+h1 a:hover {
+    color: gold;
+}
+
 h2 {
     font-family: 'Lemon Milk';
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     margin-bottom: 10px;
 }
 
+h3 {
+    font-family: 'Lemon Milk';
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+
 main {
-    padding-bottom: 400px;
+    padding-bottom: 376px;
 }
 
 input {
@@ -39,4 +56,51 @@ input {
 
 button {
     margin-bottom: 10px;
+}
+
+.divider {
+    text-align: center;
+    color: goldenrod;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.divination {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.topweather {
+    float: left;
+    margin-bottom: -5px;
+    margin-right: 10px;
+}
+
+.bottomweather {
+    float: left;
+    position: relative;
+    right: 20px;
+}
+
+.forecastbox {
+    border: 1px solid rgb(223, 187, 98);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.linebreaker {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.extrapadding {
+    font-size: smaller;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#searchHistory {
+    margin-top: 10px;
+    margin-left: 10px;
 }
