@@ -13,7 +13,9 @@
         <div class="hero is-black">
             <div class="hero-body">
               <h1 class="title">
-                Forecast Prophecy
+                <a href="index.html">
+                    Forecast Prophecy
+                </a>
               </h1>
               <p class="subtitle">
                 Let us divinate the weather for you.
@@ -23,28 +25,25 @@
     </header>
     <main>
         
-        <div class="column is-two-thirds is-offset-2 mt-5 has-background-white box">
+        <div class="column is-two-thirds is-offset-2 mt-5">
         <div class="columns is-1">
-            <div class="column is-4">
+            <aside class="column is-4 has-background-light">
                 <h2>Search by area</h2>
-                <input placeholder="⛅ Search for a town or city." class="input is-small"></input>
+                <input placeholder="⛅ Search for a town or city." class="input is-small" id="search-area"></input>
                 <center><button id="searchBtn" class="button is-small is-link">Search</button>
                 <button id="clearBtn" class="button is-small">Clear</button></center>
+                <h2 class="extrapadding">Search History</h2> 
                 <div id="searchHistory"></div>
-            </div>
+            </aside>
             
-            <div class="column is-8">
+            <div class="column is-8 has-background-white">
                 <section id="current">
-                    <h2>Weather Forecast</h2>
-                    <ol id="weatherItems"></ol>
                 </section>
-                <section>
-                    <h2>Weekly Forecast</h2>
-                    <div id="forecastItems"></div>
+                <section id="forecastItems">
                 </section>
             </div>
         </main>
-
-<script src="/assets/javascript/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
