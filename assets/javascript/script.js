@@ -1,5 +1,6 @@
 /* -- JAVASCRIPT DOCUMENT */
 
+// Defining global variables
 var key = 'd1cfc2e23e44e986be5ce47a4beba282'
 var searchBtn = document.getElementById('searchBtn')
 var clearEl = document.getElementById('clearBtn')
@@ -8,6 +9,8 @@ var weatherEl = document.getElementById('current')
 var forecastEl = document.getElementById('forecastItems')
 var searchAreaEl = document.getElementById('search-area')
 
+// Prints search history
+// Currently NOT saved to local storage -- work in progress
 function showHistory () {
     var search = document.createElement('button')
     search.setAttribute('class', 'button is-small is-info')
@@ -15,13 +18,17 @@ function showHistory () {
     searchHistoryEl.appendChild(search)
 }
 
-
+// defines function for printing Forecasts
 function getForecast() {
     
+    // establishes date
     var currentDate = new Date
+    // logs city name for third party API
     var cityName = searchAreaEl.value
 
+    // sets page to blank so there will be no overlap or compiling text
     weatherEl.innerHTML = []
+    // search queries asks for city name (defined) and key (defined)
     var requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=imperial`
     
     fetch(requestURL)
@@ -30,6 +37,7 @@ function getForecast() {
     })
     .then(function (data) {
         console.log(data)
+        // text for primary forecast
         weatherEl.innerHTML = `<h3>${data.name}</h3>
 
         <p class="divider">· · ──────────────────────── · ·</p>
@@ -43,7 +51,9 @@ function getForecast() {
 
     })
 
+    // resets forecast page so not to continually compule
     forecastEl.innerHTML = []
+    // search queries asks for city name (defined) and key (defined)
     var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${key}&units=imperial`
     
     fetch(forecastURL)
@@ -52,6 +62,7 @@ function getForecast() {
     })
     .then(function (data) {
         console.log(data)
+        // text for secondary forecast for five days
         for(i = 8; i < data.list.length; i+=8 ) {
             var forecastCard = document.createElement('div')
             forecastCard.innerHTML = `
@@ -62,12 +73,8 @@ function getForecast() {
             `
             forecastEl.append(forecastCard)
         }
-
     })
-
 }
-
 
 searchBtn.addEventListener('click', getForecast)
 searchBtn.addEventListener('click', showHistory)
-//searchBtn.onclick = saveSearchHistory
