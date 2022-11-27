@@ -1,14 +1,20 @@
 /* STYLESHEET DOCUMENT */
 
+/* selection and general tools */
+
 ::selection {
     color: #0f0f0f;
     background-color: gold;
 }
 
+/* installing font family */
+
 @font-face {
     font-family: 'Lemon Milk';
     src: url(../fonts/LEMONMILK-Regular.otf)
 }
+
+/* semantic elements */
 
 header {
     margin-bottom: 75px;
@@ -57,6 +63,8 @@ input {
 button {
     margin-bottom: 10px;
 }
+
+/* class and id structures */
 
 .divider {
     text-align: center;
